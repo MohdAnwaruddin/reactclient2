@@ -9,6 +9,7 @@ import axios from 'axios';
 
 import { useRouter } from 'next/navigation';
 import AuthContext, { AuthContextType } from '@/context/AuthContext';
+import axiosInstance from "../../../../axiosInstance";
 
 const Signup = () => {
   const auth = useContext(AuthContext) as AuthContextType;
@@ -42,8 +43,8 @@ const Signup = () => {
       password: password,
     };
     try {
-      const response = await axios.post(
-        'https://server-mauve-pi.vercel.app/register',
+      const response = await axiosInstance.post(
+        '/register',
         data,
         config
       );

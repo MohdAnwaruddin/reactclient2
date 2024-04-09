@@ -8,6 +8,7 @@ import AuthContext, { AuthContextType } from '@/context/AuthContext';
 
 import { useRouter } from 'next/navigation';
 import { useContext } from 'react';
+import axiosInstance from "../../../../axiosInstance";
  
 const Data = () => {
     const auth = useContext(AuthContext) as AuthContextType;
@@ -30,7 +31,7 @@ const Data = () => {
             try {
                 const id = localStorage.getItem('_id');
                 if (id) {
-                    const response = await axios.get(`https://server-mauve-pi.vercel.app/user/users/${id}`);
+                    const response = await axiosInstance.get(`/user/users/${id}`);
                     const userData = response.data;
                     setFormData({
                         username: userData.username || '',
@@ -55,7 +56,7 @@ const Data = () => {
     const deleteuser = async () => {
         try {
             const id = localStorage.getItem('_id');
-            const response = await axios.delete(`https://server-mauve-pi.vercel.app/user/users/${id}`);
+            const response = await axiosInstance.delete(`/user/users/${id}`);
             auth.logout();
             // localStorage.removeItem('token');
             // localStorage.removeItem('_id');
@@ -108,7 +109,7 @@ const Data = () => {
             console.log("3");
             console.log("the new password is");
             console.log(password);
-            const response = await axios.post(`https://server-mauve-pi.vercel.app/user/users/${id}`, updatedUserData, config);
+            const response = await axiosInstance.post(`/user/users/${id}`, updatedUserData, config);
             console.log('User updated successfully:', response.data);
            
             setFormData({ ...formData, cpassword: response.data.password, password: '' });

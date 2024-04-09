@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = "https://server-mauve-pi.vercel.app/"; // Assuming you have BASE_URL in your .env file
+const baseURL = "https://reactserver-pink.vercel.app/"; // Assuming you have BASE_URL in your .env file
 
 const axiosInstance = axios.create({
 baseURL ,

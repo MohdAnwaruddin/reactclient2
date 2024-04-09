@@ -4,6 +4,7 @@ import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from 'axios';
 
 import "./contactForm.css";
+import axiosInstance from "../../../../axiosInstance";
 
 export default function ContactForm() {
   const [fullname, setFullname] = useState("");
@@ -28,8 +29,8 @@ export default function ContactForm() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "https://server-mauve-pi.vercel.app/contact",
+      const response = await axiosInstance.post(
+        "/contact",
         { fullname, email, message },
         { headers: { "Content-Type": "application/json" } }
       );
