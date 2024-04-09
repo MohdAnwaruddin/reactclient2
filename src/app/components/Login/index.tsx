@@ -64,7 +64,7 @@ const Login = () => {
 
       try {
         const response = await axiosInstance.post(
-          'https://reactserver-pink.vercel.app/login',
+          'https://reactserver-pink.vercel.app/api/auth/login',
           data,
           config
         );
