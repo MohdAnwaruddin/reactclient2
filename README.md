@@ -114,3 +114,16 @@ c. Delete account
 
   Anwar, sibi, Garima did the setting part
 
+
+
+
+front end vercel link 
+https://reactclient2.vercel.app/
+
+
+backend for react project
+https://reactserver-pink.vercel.app/
+
+
+
+
