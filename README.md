@@ -117,7 +117,7 @@ c. Delete account
 
 
 
-front end vercel link 
+front end vercel link
 https://reactclient2.vercel.app/
 
 
